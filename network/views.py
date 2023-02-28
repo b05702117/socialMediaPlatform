@@ -106,12 +106,15 @@ def edit_profile(request):
         # Update background image
         banner_img = request.FILES.get('banner-img')
         if banner_img:
-            # 要加delete
+            if user_profile.banner_image:
+                user_profile.banner_image.delete()
             user_profile.banner_image = banner_img
 
         # Update avatar
         avatar = request.FILES.get('avatar')
         if avatar:
+            if user_profile.avatar:
+                user_profile.avatar.delete()
             user_profile.avatar = avatar
 
         user_profile.save()
