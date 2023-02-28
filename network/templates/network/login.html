@@ -1,0 +1,40 @@
+{% extends "network/plane_layout.html" %}
+
+{% block body %}
+    <div>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="login-container">
+
+                <div class="d-flex justify-content-center">
+                    <h2 class="logo">
+                        <i class="bi bi-twitter"></i>
+                        <span class="ms-2">Login</span>
+                    </h2>
+                    {% if message %}
+                        <div>{{ message }}</div>
+                    {% endif %}
+                </div>
+
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="Password">
+                    </div>
+                    <input class="btn btn-primary btn-block" type="submit" value="Login">
+                </form>
+
+            </div>
+        </div>
+
+        <div class="text-center d-flex flex-column">
+            <br>
+            <span>Don't have an account? <a href="{% url 'register' %}">Register here.</a></span>
+            <span class="mt-1">View all posts without login. <a href="{% url 'index' %}">All Posts</span>
+        </div>
+
+    </div>
+
+{% endblock %}

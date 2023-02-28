@@ -1,0 +1,270 @@
+/* layout */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.body {
+    flex-grow: 1;
+    margin-left: 220px;
+    margin-right: 220px;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+}
+
+.rightbar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 220px;
+    z-index: 550;
+    /* height: 100vh; */
+}
+
+
+.sidebar-button {
+    width: 100%;
+}
+
+.sidebar-button:hover {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.active {
+    font-weight: bold;
+}
+
+/* end of layout */
+
+/* login & register */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.logo {
+    color: #0d6efd 
+}
+
+.page-center {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /*centers items on the line (the x-axis by default)*/
+    align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+/* end of login & register */
+
+a {
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+.small-header-date {
+    justify-content: flex-end;
+}
+
+.post-item {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.post-user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.post-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-post-container {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.avatar {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+}
+
+.post-info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: gray;
+}
+
+.post-info-container a {
+    color: gray;
+}
+
+.post-footer {
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    gap: 2rem;
+}
+
+.footer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    margin: 0 10px;
+    margin-top: 10px;
+    gap: 0.5rem;
+}
+
+.post-footer .btn.btn-outline-secondary {
+    border-width: 0;
+    border-color: none;
+}
+
+.comment-item {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    border-radius: .25rem;
+    /* margin-bottom: 10px; */
+    padding: 10px;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.comment-user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comment-user-info-container img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.comment-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form {
+    width: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    height: 50px;
+    z-index: 500; /* to make the page-header on top of other element */
+    padding: 10px;
+}
+
+.banner-img {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: lightblue;
+    margin-top: -16px; /* to stick the banner to the top */
+}
+
+.profile-banner {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 10px;
+}
+
+.profile-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.profile-avatar {
+    background-image: url(/static/network/profile.png);
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    display: inline-block;
+    width: 134px;
+    height: 134px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    margin-top: -77px; 
+}
+
