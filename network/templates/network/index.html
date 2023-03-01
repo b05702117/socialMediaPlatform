@@ -158,25 +158,25 @@
                         <button type="button" class="footer-btn btn btn-outline-secondary" id="like-unlike-button-{{ post.id }}">
                             {% if post.user_has_liked %}
                                 <i class="bi bi-heart-fill"></i>
-                                <span>Unlike</span>
+                                <span class="d-sm-none d-md-block">Unlike</span>
                             {% else %}
                                 <i class="bi bi-heart"></i>
-                                <span>Like</span>
+                                <span class="d-sm-none d-md-block">Like</span>
                             {% endif %}
                         </button>
                         <!-- Comment button -->
                         <button type="button" class="footer-btn btn btn-outline-secondary" id="post-comment-button-{{ post.id }}" data-toggle="modal" data-target="#comment-modal" data-post-id="{{ post.id }}">
                             <i class="bi bi-chat-left"></i>
-                            <span>Comment</span>
+                            <span class="d-sm-none d-md-block">Comment</span>
                         </button>
                         <!-- Save button -->
                         <button type="button" class="footer-btn btn btn-outline-secondary" id="save-unsave-button-{{ post.id }}" data-post-id="{{ post.id }}">
                             {% if post.user_has_saved %}
                                 <i class="bi bi-bookmark-fill"></i>
-                                <span>Unsaved</span>
+                                <span class="d-sm-none d-md-block">Unsaved</span>
                             {% else %}
                                 <i class="bi bi-bookmark"></i>
-                                <span>Save</span>
+                                <span class="d-sm-none d-md-block">Save</span>
                             {% endif %}
                         </button>
                     </div>
