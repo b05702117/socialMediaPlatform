@@ -44,7 +44,10 @@
                                 <div class="comment-user-info-container">
                                     <img src="{% static 'network/profile.png' %}" alt="user name" class="avatar">
                                     <div class="comment-user-info">
-                                        <h4><a class="header-author" href="#" id="comment-author"></a></h4>
+                                        <div>
+                                            <b><a class="link-dark" href="#" id="comment-author"></a></b>
+                                            <small class="text-secondary" id="comment-author-username"></small>
+                                        </div>
                                         <small class="text-secondary small-header-date" id="comment-date"></small>
                                     </div>
                                 </div>
@@ -91,7 +94,7 @@
                     <form action="{% url 'make_new_post' %}" method="post" >
                         {% csrf_token %}
                         <div class="form-group">
-                            <textarea class="form-control" name="post_content" rows="3" placeholder="What's on your mind, {{ request.user.username }}?"></textarea>
+                            <textarea class="form-control" name="post_content" rows="3" placeholder="What's on your mind, {{ request.user.profile }}?"></textarea>
                         </div>
                         {% if error_message %}
                             <p class="text-danger">{{ error_message }}</p>

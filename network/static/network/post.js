@@ -282,13 +282,15 @@ function displayComments(postId) {
                 commentItem.dataset.postId = postId;
 
                 const commentAuthor = commentItem.querySelector('#comment-author');
+                const commentAuthorUsername = commentItem.querySelector('#comment-author-username');
                 const commentDate = commentItem.querySelector('#comment-date');
                 const commentContent = commentItem.querySelector('#comment-content');
                 const avatar = commentItem.querySelector('.avatar');
 
                 // fill in the value in template
-                commentAuthor.textContent = comment.author.username;
+                commentAuthor.textContent = comment.author.profile_name;
                 commentAuthor.href = `/profile/${comment.author.id}`;
+                commentAuthorUsername.textContent = `@${comment.author.username}`;
                 commentDate.textContent = new Date(comment.created_at).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',

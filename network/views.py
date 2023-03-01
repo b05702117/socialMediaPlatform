@@ -332,7 +332,7 @@ def update_save_status(request, post_id):
 
 def user_serializer(user):
     """convert Djangal User object into dict format that can be parsed into JSON format"""
-    return {"id": user.id, "username": user.username, "email": user.email}
+    return {"id": user.id, "username": user.username, "profile_name": user.profile.user_name, "email": user.email}
 
 def profile_serializer(user):
     profile = user.profile
