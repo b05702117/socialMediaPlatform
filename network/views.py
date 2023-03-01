@@ -103,6 +103,11 @@ def edit_profile(request):
         user = request.user
         user_profile = user.profile
 
+        # Update user name for the profile
+        user_name = request.POST.get('user-name')
+        if user_name:
+            user_profile.user_name = user_name
+
         # Update background image
         banner_img = request.FILES.get('banner-img')
         if banner_img:

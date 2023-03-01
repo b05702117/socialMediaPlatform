@@ -118,7 +118,10 @@
                                 {% endif %}
                             </a>
                             <div class="post-user-info">
-                                <span class="fs-2"><a href="{% url 'profile' profile_owner_id=post.poster.id %}" class="link-dark">{{ post.poster }}</a></span>
+                                <div>
+                                    <b><a href="{% url 'profile' profile_owner_id=post.poster.id %}" class="link-dark">{{ post.poster.profile }}</a></b>
+                                    <small class="text-secondary"> @{{post.poster}}</small>
+                                </div>
                                 <small class="text-secondary small-header-date">{{ post.created_at }}</small>
                             </div>
                         </div>

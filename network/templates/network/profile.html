@@ -88,6 +88,10 @@
                     {% csrf_token %}
                     <div class="modal-body">
                         <div class="form-group">
+                            <label for="user_name">User Name:</label>
+                            <input type="text" class="form-control" placeholder="{{ user.username }}" name="user-name">
+                        </div>
+                        <div class="form-group">
                             <label for="banner-image">Choose a banner image:</label>
                             <input type="file" class="form-control-file" name="banner-img" accept="image/png, image/jpeg">
                         </div>
@@ -122,7 +126,7 @@
             <img src="{% static 'network/profile.png' %}" alt="Profile Image" class="profile-avatar">
         {% endif %}
         <div class="profile-header">
-            <h2>{{ profile_owner }}</h2>
+            <h2>{{ profile_owner.profile }}</h2>
             {% if user.is_authenticated %}
                 {% if user != profile_owner %}
                     <form action="{% url 'update_follow_status' user_has_followed=user_has_followed%}" method="post">
@@ -164,7 +168,10 @@
                             {% endif %}
                         </a>
                         <div class="post-user-info">
-                            <span class="fs-2"><a href="{% url 'profile' profile_owner_id=post.poster.id %}" class="link-dark">{{ post.poster }}</a></span>
+                            <div>
+                                <b><a href="{% url 'profile' profile_owner_id=post.poster.id %}" class="link-dark">{{ post.poster.profile }}</a></b>
+                                <small class="text-secondary"> @{{post.poster}}</small>
+                            </div>
                             <small class="text-secondary small-header-date">{{ post.created_at }}</small>
                         </div>
                     </div>
@@ -250,6 +257,7 @@
             const currentUserId = null;
         {% endif %}
     </script>
+    <!-- change the content of the header -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const activeSidebarButton = document.querySelector('#sidebar-profile-button');

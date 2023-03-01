@@ -8,12 +8,19 @@ class User(AbstractUser):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+    user_name = models.CharField(max_length=50, blank=True, default="")
     following = models.ManyToManyField("self", symmetrical=False, related_name="followed_by")
     banner_image = models.ImageField(null=True, blank=True, upload_to="images/")
     avatar = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
-        return self.user.username
+        return self.user_name
+
+    def save(self, *args, **kwargs):
+        """override the empty user_name with User.username"""
+        if not self.user_name:
+            self.user_name = self.user.username
+        super(Profile, self).save(*args, **kwargs)
     
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
